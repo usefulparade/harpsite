@@ -1,0 +1,166 @@
+
+
+@font-face {
+    font-family: 'gutteral';
+    src: url(../assets/fonts/gutteral.ttf);
+}
+
+@font-face {
+    font-family: 'dystopia';
+    src: url(../assets/fonts/artdystopia.ttf);
+}
+
+@font-face {
+    font-family: 'metal';
+    src: url(../assets/fonts/metalmacabre.ttf);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(-45deg, rgba(255, 192, 203, 1) 25%, blue 50%, rgba(138, 43, 226, 1) 75%); 
+    height: 100vh;
+    cursor: url('../assets/cursor/angel.png'), pointer;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1000;
+}
+
+.banner-and-cherubs {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 50%;
+    animation: cherubChyron 6s alternate linear infinite
+}
+
+.banner-and-cherubs img {
+    display: inline-block;
+    height: 100px;
+}
+
+.window {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#banner p {
+    font-family: 'gutteral';
+    margin: 0px;
+    color: purple;
+    display: inline-block;
+    font-size: 32px;
+    width: auto;
+    padding-left: 100%;
+    animation: tickerTape 10s linear infinite;
+}
+
+.window-body#output{
+    height: 150px;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+.chat-window{
+    display: block;
+    position: fixed;
+    width: 300px;
+    
+    bottom: 5%;
+    right: 5%;
+}
+
+.chat-window p {
+    display: block;
+    padding: 5px;
+    border-radius: 2px;
+    min-width: 50%;
+    max-width: 80%;
+    animation: newChat 0.2s ease-out;
+    word-break:keep-all;
+    white-space: normal;
+    margin: 5px;
+}
+
+.chat-window p#user {
+    font-size: 2em;
+    float: right;
+    background-color: lightgray;
+}
+
+.chat-window p#bb {
+    font-size: 2em;
+    overflow: wrap;
+    float: left;
+    background-color: pink;
+}
+
+.input-section {
+    width: 100%;
+}
+.input-section input {
+    width: 195px;
+    height: 50px;
+    font-size: 1em;
+    float: right;
+    margin-top: 10px;
+}
+.input-section button {
+    float: right;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 95px;
+    height: 50px;
+}
+
+#output {
+    padding: 20px;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes tickerTape {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+}
+
+@keyframes cherubChyron {
+    0% {
+        transform: translate(0%, 0) rotate(10deg);
+    }
+    25% {
+        transform: translate(25%, 50px) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(50%, 0) rotate(0deg);
+    }
+    75% {
+        transform: translate(75%, 50px) rotate(0deg);
+    }
+    100% {
+        transform: translate(100%, 0) rotate(-10deg);
+        
+    }
+}
+
+@keyframes newChat {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
