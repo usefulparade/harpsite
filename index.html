@@ -17,19 +17,23 @@
     
     
 
-    <script src="./js/three/build/three.js"></script>
+    <!-- <script type="module" src="./js/three/build/three.module.js"></script> -->
+    
 
-    <script src="js/avatar.js"></script>
+    
     <script src="js/p5.js"></script>
     <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
     <script src="js/chatbot.js"></script>
+    <!-- <script src="js/avatar.js"></script> -->
+    <script type="module" src="./js/three-avatar.js"></script>
+    
 
     
     
 </head>
 
 
-<body onload="threeInit()">
+<body>
     <!-- <h1>chatbot</h1> -->
     <div class="banner-and-cherubs" id="banner">
         <img src="./assets/gifs/special/chyron-cherub.gif">
@@ -61,16 +65,16 @@
             <span>Click here for tickets and more information — </span>
         </p>
     </div> -->
-    <div class="chat-window">
+    <div class="chat-window" id="chat-window">
         <div class="window" id="chat-output-window" style="width: 100%">
             <div class="title-bar">
-            <div class="title-bar-text">angel bby</div>
-            <div class="title-bar-controls">
-                <!-- <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button> -->
-                <!-- <button aria-label="Help"></button> -->
-            </div>
+                <div class="title-bar-text">angel bby chat client ✨ONLINE✨</div>
+                <div class="title-bar-controls">
+                    <!-- <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button> -->
+                    <!-- <button aria-label="Help"></button> -->
+                </div>
             </div>
             <div class="window-body" id="output">
             </div>
@@ -83,6 +87,10 @@
         </div>
         
     </div>
+
+    <div id="scene-container">
+        <!-- THREE DEE STUFF lives here :) -->
+      </div>
 
    
 </body>
