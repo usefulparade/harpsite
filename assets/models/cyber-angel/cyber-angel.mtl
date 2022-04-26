@@ -1,0 +1,385 @@
+newmtl Std_Nails
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/Std_Nails_diffuse.jpg
+    map_Bump cyber-angel/Std_Nails_bump.jpg
+    map_Pm cyber-angel/Std_Nails_metallic.png
+    map_Pr cyber-angel/Std_Nails_roughness.png
+newmtl Std_Eyelash
+    Ns 20.000000
+    d 1.000000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd cyber-angel/Std_Eyelash_diffuse.jpg
+    map_D cyber-angel/Std_Eyelash_opacity.jpg
+    map_Pm cyber-angel/Std_Eyelash_metallic.jpg
+    map_Pr cyber-angel/Std_Eyelash_roughness.jpg
+newmtl 1_Iris
+    Ns 20.000000
+    d 1.000000
+    Ka 0.200000 0.200000 0.200000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.200000 0.200000 0.200000
+    map_Kd cyber-angel/1_Iris_diffuse.jpg
+    map_Pm cyber-angel/1_Iris_metallic.png
+    map_Pr cyber-angel/1_Iris_roughness.png
+newmtl 1_Cornea
+    Ns 11.000000
+    d 0.500000
+    Ka 0.200000 0.200000 0.200000
+    Kd 0.000000 0.000000 0.000000
+    Ks 0.000000 0.000000 0.000000
+    map_D cyber-angel/1_Cornea_opacity.jpg
+    map_Pm cyber-angel/1_Cornea_metallic.png
+    map_Pr cyber-angel/1_Cornea_roughness.png
+newmtl 1_Eyes
+    Ns 20.000000
+    d 1.000000
+    Ka 0.200000 0.200000 0.200000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.200000 0.200000 0.200000
+    map_Kd cyber-angel/1_Eyes_diffuse.jpg
+    map_Pm cyber-angel/1_Eyes_metallic.png
+    map_Pr cyber-angel/1_Eyes_roughness.png
+newmtl control2_2(2)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control2_2(2)_diffuse.jpg
+    map_D cyber-angel/control2_2(2)_opacity.jpg
+    map_Bump cyber-angel/control2_2(2)_bump.jpg
+    map_Pm cyber-angel/control2_2(2)_metallic.png
+    map_Pr cyber-angel/control2_2(2)_roughness.png
+    map_refl cyber-angel/control2_2(2)_reflection.jpg
+newmtl control2_2(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control2_2(0)_diffuse.jpg
+    map_D cyber-angel/control2_2(0)_opacity.jpg
+    map_Bump cyber-angel/control2_2(0)_bump.jpg
+    map_Pm cyber-angel/control2_2(0)_metallic.png
+    map_Pr cyber-angel/control2_2(0)_roughness.png
+    map_refl cyber-angel/control2_2(0)_reflection.jpg
+newmtl control2_2(3)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control2_2(3)_diffuse.jpg
+    map_D cyber-angel/control2_2(3)_opacity.jpg
+    map_Bump cyber-angel/control2_2(3)_bump.jpg
+    map_Pm cyber-angel/control2_2(3)_metallic.png
+    map_Pr cyber-angel/control2_2(3)_roughness.png
+    map_refl cyber-angel/control2_2(3)_reflection.jpg
+newmtl control2_2(1)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control2_2(1)_diffuse.jpg
+    map_D cyber-angel/control2_2(1)_opacity.jpg
+    map_Bump cyber-angel/control2_2(1)_bump.jpg
+    map_Pm cyber-angel/control2_2(1)_metallic.png
+    map_Pr cyber-angel/control2_2(1)_roughness.png
+    map_refl cyber-angel/control2_2(1)_reflection.jpg
+newmtl Std_Skin_Head
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/Std_Skin_Head_diffuse.jpg
+    map_Bump cyber-angel/Std_Skin_Head_bump.jpg
+    map_Ks cyber-angel/Std_Skin_Head_specular.jpg
+    map_Pm cyber-angel/Std_Skin_Head_metallic.jpg
+    map_Pr cyber-angel/Std_Skin_Head_roughness.png
+newmtl Std_Skin_Body
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/Std_Skin_Body_diffuse.jpg
+    map_Bump cyber-angel/Std_Skin_Body_bump.jpg
+    map_Ks cyber-angel/Std_Skin_Body_specular.jpg
+    map_Pm cyber-angel/Std_Skin_Body_metallic.jpg
+    map_Pr cyber-angel/Std_Skin_Body_roughness.png
+newmtl 16___-___Default(0)
+    Ns 35.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(0)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(0)_opacity.jpg
+    map_Pm cyber-angel/16___-___Default(0)_metallic.png
+    map_Pr cyber-angel/16___-___Default(0)_roughness.png
+    map_refl cyber-angel/16___-___Default(0)_reflection.jpg
+newmtl 16___-___Default
+    Ns 35.000000
+    d 1.000000
+    Ka 0.603922 0.603922 0.603922
+    Kd 0.784314 0.784314 0.784314
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default_diffuse.jpg
+    map_D cyber-angel/16___-___Default_opacity.jpg
+    map_Bump cyber-angel/16___-___Default_bump.jpg
+    map_Pm cyber-angel/16___-___Default_metallic.png
+    map_Pr cyber-angel/16___-___Default_roughness.png
+    map_refl cyber-angel/16___-___Default_reflection.jpg
+newmtl Std_Skin_Arm
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/Std_Skin_Arm_diffuse.jpg
+    map_Bump cyber-angel/Std_Skin_Arm_bump.jpg
+    map_Ks cyber-angel/Std_Skin_Arm_specular.jpg
+    map_Pm cyber-angel/Std_Skin_Arm_metallic.jpg
+    map_Pr cyber-angel/Std_Skin_Arm_roughness.png
+newmtl Std_Skin_Leg
+    Ns 19.999998
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/Std_Skin_Leg_diffuse.jpg
+    map_Bump cyber-angel/Std_Skin_Leg_bump.jpg
+    map_Ks cyber-angel/Std_Skin_Leg_specular.jpg
+    map_Pm cyber-angel/Std_Skin_Leg_metallic.jpg
+    map_Pr cyber-angel/Std_Skin_Leg_roughness.png
+newmtl 1_Pupil
+    Ns 20.000000
+    d 1.000000
+    Ka 0.200000 0.200000 0.200000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.200000 0.200000 0.200000
+    map_Kd cyber-angel/1_Pupil_diffuse.jpg
+    map_Pm cyber-angel/1_Pupil_metallic.png
+    map_Pr cyber-angel/1_Pupil_roughness.png
+newmtl Std_Lower_Teeth
+    Ns 2.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.900000 0.900000 0.900000
+    map_Kd cyber-angel/Std_Lower_Teeth_diffuse.jpg
+    map_Pm cyber-angel/Std_Lower_Teeth_metallic.jpg
+    map_Pr cyber-angel/Std_Lower_Teeth_roughness.jpg
+newmtl 01___-___Default(0)
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/01___-___Default(0)_diffuse.jpg
+    map_Bump cyber-angel/01___-___Default(0)_bump.jpg
+    map_Ks cyber-angel/01___-___Default(0)_specular.jpg
+    map_Pm cyber-angel/01___-___Default(0)_metallic.jpg
+    map_Pr cyber-angel/01___-___Default(0)_roughness.png
+newmtl wingR(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/wingR(0)_diffuse.jpg
+    map_D cyber-angel/wingR(0)_opacity.jpg
+    map_Bump cyber-angel/wingR(0)_bump.jpg
+    map_Pm cyber-angel/wingR(0)_metallic.png
+    map_Pr cyber-angel/wingR(0)_roughness.png
+    map_refl cyber-angel/wingR(0)_reflection.jpg
+newmtl 16___-___Default(1)
+    Ns 35.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(1)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(1)_opacity.jpg
+    map_Pm cyber-angel/16___-___Default(1)_metallic.png
+    map_Pr cyber-angel/16___-___Default(1)_roughness.png
+    map_refl cyber-angel/16___-___Default(1)_reflection.jpg
+newmtl control1(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control1(0)_diffuse.jpg
+    map_D cyber-angel/control1(0)_opacity.jpg
+    map_Bump cyber-angel/control1(0)_bump.jpg
+    map_Pm cyber-angel/control1(0)_metallic.png
+    map_Pr cyber-angel/control1(0)_roughness.png
+    map_refl cyber-angel/control1(0)_reflection.jpg
+newmtl 16___-___Default(0)
+    Ns 35.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(0)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(0)_opacity.jpg
+    map_Pm cyber-angel/16___-___Default(0)_metallic.png
+    map_Pr cyber-angel/16___-___Default(0)_roughness.png
+    map_refl cyber-angel/16___-___Default(0)_reflection.jpg
+newmtl control3(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control3(0)_diffuse.jpg
+    map_D cyber-angel/control3(0)_opacity.jpg
+    map_Bump cyber-angel/control3(0)_bump.jpg
+    map_Pm cyber-angel/control3(0)_metallic.png
+    map_Pr cyber-angel/control3(0)_roughness.png
+    map_refl cyber-angel/control3(0)_reflection.jpg
+newmtl 16___-___Default
+    Ns 35.000000
+    d 1.000000
+    Ka 0.603922 0.603922 0.603922
+    Kd 0.784314 0.784314 0.784314
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default_diffuse.jpg
+    map_D cyber-angel/16___-___Default_opacity.jpg
+    map_Bump cyber-angel/16___-___Default_bump.jpg
+    map_Pm cyber-angel/16___-___Default_metallic.png
+    map_Pr cyber-angel/16___-___Default_roughness.png
+    map_refl cyber-angel/16___-___Default_reflection.jpg
+newmtl control3(1)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control3(1)_diffuse.jpg
+    map_D cyber-angel/control3(1)_opacity.jpg
+    map_Bump cyber-angel/control3(1)_bump.jpg
+    map_Pm cyber-angel/control3(1)_metallic.png
+    map_Pr cyber-angel/control3(1)_roughness.png
+    map_refl cyber-angel/control3(1)_reflection.jpg
+newmtl control3(2)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control3(2)_diffuse.jpg
+    map_D cyber-angel/control3(2)_opacity.jpg
+    map_Bump cyber-angel/control3(2)_bump.jpg
+    map_Pm cyber-angel/control3(2)_metallic.png
+    map_Pr cyber-angel/control3(2)_roughness.png
+    map_refl cyber-angel/control3(2)_reflection.jpg
+newmtl 16___-___Default(0)
+    Ns 35.000000
+    d 1.000000
+    Ka 0.603922 0.603922 0.603922
+    Kd 0.784314 0.784314 0.784314
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(0)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(0)_opacity.jpg
+    map_Bump cyber-angel/16___-___Default(0)_bump.jpg
+    map_Pm cyber-angel/16___-___Default(0)_metallic.png
+    map_Pr cyber-angel/16___-___Default(0)_roughness.png
+    map_refl cyber-angel/16___-___Default(0)_reflection.jpg
+newmtl Std_Upper_Teeth
+    Ns 2.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.900000 0.900000 0.900000
+    map_Kd cyber-angel/Std_Upper_Teeth_diffuse.jpg
+    map_Pm cyber-angel/Std_Upper_Teeth_metallic.jpg
+    map_Pr cyber-angel/Std_Upper_Teeth_roughness.jpg
+newmtl Std_Tongue
+    Ns 20.000000
+    d 1.000000
+    Ka 0.196078 0.196078 0.196078
+    Kd 1.000000 1.000000 1.000000
+    Ks 0.898039 0.898039 0.898039
+    map_Kd cyber-angel/Std_Tongue_diffuse.jpg
+    map_Pm cyber-angel/Std_Tongue_metallic.jpg
+    map_Pr cyber-angel/Std_Tongue_roughness.jpg
+newmtl control1_2(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control1_2(0)_diffuse.jpg
+    map_D cyber-angel/control1_2(0)_opacity.jpg
+    map_Bump cyber-angel/control1_2(0)_bump.jpg
+    map_Pm cyber-angel/control1_2(0)_metallic.png
+    map_Pr cyber-angel/control1_2(0)_roughness.png
+    map_refl cyber-angel/control1_2(0)_reflection.jpg
+newmtl 16___-___Default(0)
+    Ns 35.000000
+    d 1.000000
+    Ka 0.603922 0.603922 0.603922
+    Kd 0.784314 0.784314 0.784314
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(0)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(0)_opacity.jpg
+    map_Bump cyber-angel/16___-___Default(0)_bump.jpg
+    map_Pm cyber-angel/16___-___Default(0)_metallic.png
+    map_Pr cyber-angel/16___-___Default(0)_roughness.png
+    map_refl cyber-angel/16___-___Default(0)_reflection.jpg
+newmtl 01___-___Default(0)
+    Ns 50.000000
+    d 1.000000
+    Ka 0.270588 0.270588 0.270588
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/01___-___Default(0)_diffuse.jpg
+    map_Bump cyber-angel/01___-___Default(0)_bump.jpg
+    map_Ks cyber-angel/01___-___Default(0)_specular.jpg
+    map_Pm cyber-angel/01___-___Default(0)_metallic.png
+    map_Pr cyber-angel/01___-___Default(0)_roughness.png
+newmtl control3(3)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/control3(3)_diffuse.jpg
+    map_D cyber-angel/control3(3)_opacity.jpg
+    map_Bump cyber-angel/control3(3)_bump.jpg
+    map_Pm cyber-angel/control3(3)_metallic.png
+    map_Pr cyber-angel/control3(3)_roughness.png
+    map_refl cyber-angel/control3(3)_reflection.jpg
+newmtl wingL(0)
+    Ns 0.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/wingL(0)_diffuse.jpg
+    map_D cyber-angel/wingL(0)_opacity.jpg
+    map_Bump cyber-angel/wingL(0)_bump.jpg
+    map_Pm cyber-angel/wingL(0)_metallic.png
+    map_Pr cyber-angel/wingL(0)_roughness.png
+    map_refl cyber-angel/wingL(0)_reflection.jpg
+newmtl 16___-___Default(1)
+    Ns 35.000000
+    d 1.000000
+    Ka 1.000000 1.000000 1.000000
+    Kd 1.000000 1.000000 1.000000
+    Ks 1.000000 1.000000 1.000000
+    map_Kd cyber-angel/16___-___Default(1)_diffuse.jpg
+    map_D cyber-angel/16___-___Default(1)_opacity.jpg
+    map_Pm cyber-angel/16___-___Default(1)_metallic.png
+    map_Pr cyber-angel/16___-___Default(1)_roughness.png
+    map_refl cyber-angel/16___-___Default(1)_reflection.jpg

@@ -21,8 +21,10 @@ body {
     /* background-image: linear-gradient(-45deg, rgba(255, 192, 203, 1) 25%, blue 50%, rgba(138, 43, 226, 1) 75%);  */
     height: 100vh;
     cursor: url('../assets/cursor/angel.png'), pointer;
-    background-image: url('../assets/img/pixelartfantasybg.png');
-    background-size: cover;
+    background-image: url('../assets/gifs/special/bg-mountain.gif');
+    image-rendering: pixelated;
+    background-size: contain;
+    background-position: bottom;
     overflow: hidden;
 }
 
@@ -48,7 +50,6 @@ canvas {
 
 .banner-and-cherubs {
     white-space: nowrap;
-    overflow: hidden;
     box-sizing: border-box;
     width: 50%;
     animation: cherubChyron 6s alternate linear infinite
@@ -57,6 +58,10 @@ canvas {
 .banner-and-cherubs img {
     display: inline-block;
     height: 100px;
+}
+
+.banner-and-cherubs .window{
+    width: 50%;
 }
 
 .window {
@@ -68,12 +73,11 @@ canvas {
 
 .window#meme {
     top: -100vh;
-    top: 0vw;
     transition: top 1s;
 }
 
 .window#meme img{
-    width: 400px;
+    width: 100%;
 }
 
 .window#meme .title-bar{
@@ -103,7 +107,7 @@ canvas {
     position: fixed;
     width: 300px;
     bottom: 5%;
-    right: -20%;
+    right: -100vw;
     transition: right 0.5s;
 }
 
@@ -152,6 +156,11 @@ canvas {
 
 #output {
     padding: 20px;
+}
+
+/* SMALL RULES */
+
+@media only screen and (max-width: 720px){
 }
 
 

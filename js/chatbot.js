@@ -11,9 +11,12 @@ let botReady;
 let memes = [];
 let harpImages = [];
 
+let bgLoop;
+
 p5.disableFriendlyErrors = true; // disables FES
 
 function preload(){
+    bgLoop = loadSound('./assets/audio/bg_loop_v2.wav');
 }
 
 function setup(){
@@ -39,7 +42,10 @@ function setup(){
 
         //slide in chat window
         let chatWindow = select('#chat-window');
-        chatWindow.style('right', '5%');
+        chatWindow.style('right', '10%');
+
+        bgLoop.loop();
+
     }
 
     function brainError(){
@@ -144,6 +150,8 @@ function inactiveChat(){
 function memeThrower97(type){
     let memeChoice;
 
+    let memeLength = 2;
+
     let newWindow = createDiv().addClass('window');
     newWindow.id('meme');
     
@@ -166,7 +174,7 @@ function memeThrower97(type){
     closeButton.html('');
 
     closeButton.mousePressed(function(){
-        newWindow.style('top', '100vw');
+        newWindow.style('top', '150vh');
         newWindow.addClass('dead');
         setTimeout(memeCleanup, 3000);
     });
@@ -182,7 +190,8 @@ function memeThrower97(type){
     windowBody.parent(newWindow);
 
     newWindow.style('transform', 'rotate(' + random(-12, 12) + 'deg)');
-    newWindow.position(random(0, windowWidth-400), random(100, windowHeight/2));
+    newWindow.style('width', '' + random(20, 40) + '%');
+    newWindow.position(random(0, windowWidth*.6), random(100, windowHeight*.5));
 
     memes.push(newWindow);
     
