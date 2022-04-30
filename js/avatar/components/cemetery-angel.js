@@ -6,7 +6,7 @@ import { setupModel } from './setupModel.js';
 async function loadCemAngel() {
   const loader = new GLTFLoader();
 
-  const cemAngelData = await loader.loadAsync('../assets/models/cemetery_angel/scene.gltf');
+  const cemAngelData = await loader.loadAsync('./assets/models/cemetery_angel/scene.gltf');
 
   console.log('a cemAngel appears!', cemAngelData);
 

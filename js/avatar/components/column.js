@@ -6,7 +6,7 @@ import { setupModel } from './setupModel.js';
 async function loadColumn() {
   const loader = new GLTFLoader();
 
-  const columnData = await loader.loadAsync('../assets/models/greek_column/scene.gltf');
+  const columnData = await loader.loadAsync('./assets/models/greek_column/scene.gltf');
 
   console.log('a column appears!', columnData);
 

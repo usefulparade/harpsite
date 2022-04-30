@@ -6,7 +6,7 @@ import { setupModel } from './setupModel.js';
 async function loadHarp() {
   const loader = new GLTFLoader();
 
-  const harpData = await loader.loadAsync('../assets/models/harp.glb');
+  const harpData = await loader.loadAsync('./assets/models/harp.glb');
 
   console.log('a heavenly glissando!', harpData);
 
