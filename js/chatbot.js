@@ -307,12 +307,12 @@ async function memeThrower97(type, trigger){
     if (type == 'img'){
 
         titleText = createDiv('' + trigger.toUpperCase() + '_' + memeChoice + ".PNG");
-        newMeme = createImg('../assets/img/memes/' + trigger + '/' + trigger + '_' + memeChoice + '.png');
+        newMeme = createImg('./assets/img/memes/' + trigger + '/' + trigger + '_' + memeChoice + '.png');
         
     }
     else if (type == 'gif'){
         titleText = createDiv('' + trigger.toUpperCase() + '_' + memeChoice + ".GIF");
-        newMeme = createImg('../assets/gifs/' + trigger + '/' + trigger + '_' + memeChoice + '.gif');
+        newMeme = createImg('./assets/gifs/' + trigger + '/' + trigger + '_' + memeChoice + '.gif');
     }
 
     
