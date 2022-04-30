@@ -13,6 +13,7 @@ let botReady;
 let memes = [];
 let harpImages = [];
 let memeCluster;
+let clusterCounter;
 
 let triggerNames = [
     //IMAGES
@@ -206,8 +207,9 @@ function setup(){
 
     inactiveCounter = 0;
     timeSinceLastChat = 0;
-    memeTimer = 1200;
+    memeTimer = 12000;
     memeCluster = true;
+    clusterCounter = 0;
 
 }
 
@@ -228,11 +230,12 @@ function draw(){
         memeThrower97(convertTriggerToType(trigger), trigger);
         if (memeCluster){
             memeTimer = random(100, 500);
-            if (random() > 0.5){
+            clusterCounter++;
+            if (random() > 0.5 || clusterCounter > 3){
                 memeCluster = false;
             }
         } else {
-            memeTimer = random(1000, 20000);
+            memeTimer = random(6000, 30000);
             if (random() < 0.6){
                 memeCluster = true;
             }
