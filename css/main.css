@@ -16,16 +16,28 @@
 }
 
 body {
+    display: block;
+    position:fixed;
     margin: 0px;
     padding: 0px;
     /* background-image: linear-gradient(-45deg, rgba(255, 192, 203, 1) 25%, blue 50%, rgba(138, 43, 226, 1) 75%);  */
     height: 100vh;
+    width: 100vw;
     cursor: url('../assets/cursor/angel.png'), pointer;
-    background-image: url('../assets/gifs/special/bg-mountain.gif');
+    background-color: rgb(223, 235, 243);
+    background-image: url('../assets/img/bg_clouds.jpg');
     image-rendering: pixelated;
-    background-size: contain;
+    background-size: cover;
     background-position: bottom;
     overflow: hidden;
+    box-sizing: border-box;
+    border: 10px solid tomato;
+    /* border-radius: 10px; */
+    /* border-style: dotted; */
+}
+
+button {
+    cursor: pointer;
 }
 
 #scene-container{
@@ -48,11 +60,110 @@ canvas {
     z-index: -1000;
 }
 
+.nav {
+    display: block;
+    position: absolute;
+    /* width: 300px; */
+    top: 0px;
+    left: calc(50% - 150px);
+    background-image: linear-gradient(-90deg, rgb(214, 232, 244) 0%, rgb(239, 199, 238) 100%);
+    margin-top: -10px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 10px solid tomato;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.utilities {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 85px;
+    height: 250px;
+    /* background-color: rgba(255,255,255,50); */
+    /* border-radius: 20px; */
+    box-sizing: content-box;
+    /* border: 3px dashed red; */
+    /* border-left: 10px solid tomato;
+    border-bottom: 5px solid tomato;
+    border-right: 1px solid tomato;
+    border-top: 1px solid tomato; */
+    border-left: 10px solid tomato;
+    border-bottom: 10px solid tomato;
+    border-radius: 0px;
+    /* background-color: lightgoldenrodyellow; */
+    background-image: linear-gradient(rgb(214, 232, 244) 0%, rgb(239, 199, 238) 100%);
+    /* background-color: silver; */
+    border-radius: 0px;
+    border-radius: 0px 0px 0px 20px;
+    /* margin: 20px; */
+    margin: 0px;
+    margin-top: -10px;
+    margin-right: -10px;
+    z-index: 0;
+}
+
+.panic-button {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    
+}
+
+.panic-button button {
+    padding: 10px;  
+    border-radius: 15px;
+    /* background-color: red; */
+    color: black;
+    cursor: pointer;
+}
+
+.panic-button button:active {
+    padding: 10px;  
+    background-color: tomato;
+    color: white;
+}
+
+.field-row#volume {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    z-index: 0;
+    /* cursor: pointer; */
+}
+
+.field-row label {
+    /* transform: rotate(90deg) translate(30px, 0px); */
+    display: block;
+    /* position: absolute; */
+    transform: translate(-10px, 0px);
+    color: white;
+    /* background-color: red; */
+    padding: 5px;
+    font-size: 2em;
+    z-index: 1000;
+}
+
+.field-row input {
+    cursor: pointer;
+}
+
 .banner-and-cherubs {
     white-space: nowrap;
     box-sizing: border-box;
     width: 50%;
-    animation: cherubChyron 6s alternate linear infinite
+    animation: cherubChyron 6s alternate linear infinite;
+    z-index: 1000;
+}
+
+.banner-and-cherubs .window:hover {
+    background-image: linear-gradient(90deg, lightpink 0%, lightskyblue 80%);
+    cursor: pointer;
 }
 
 .banner-and-cherubs img {
@@ -71,6 +182,104 @@ canvas {
     box-sizing: border-box;
 }
 
+.big-window {
+    display: block;
+    position: absolute;
+    top: -100vh;
+    left: 10vw;
+    width: 80vw;
+    height: 60vh;
+    z-index: 1000;
+    transition: top, 0.5s;
+}
+
+.big-window .window {
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/bg_clouds.jpg');
+    background-size: cover;
+    font-size: 2em;
+    /* overflow: scroll; */
+
+}
+
+.big-window .window .window-body {
+    overflow: scroll;
+    height: 100%;
+}
+
+#tour-window {
+    transform: rotate(-2deg);
+}
+
+#acknowledgments-window {
+    transform: rotate(2deg);
+}
+
+#tour-body p.status-bar-field {
+    width: 30%;
+    /* height: 100px; */
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#tour-body p.status-bar-field#tickets {
+    width: 30%;
+    padding: 0px;
+}
+
+#tour-body button {
+    font-size: 1em;
+}
+
+#tour-body p.status-bar-field#header {
+    background-color: black;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#tour-body button {
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+}
+
+#acknowledgments-body {
+    margin-bottom: 100px;
+    margin-top: 30px;
+    width: 100%;
+
+
+}
+
+#acknowledgments-body img {
+    display: block;
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#acknowledgments-body img:hover {
+    cursor: pointer;
+    background-color: tomato;
+    border-radius: 20px;
+}
+
+#acknowledgments-body p {
+    text-align: center;
+}
+
+#merch-body p {
+    text-align: center;
+}
+
 .window#meme {
     top: -100vh;
     transition: top 1s;
@@ -86,6 +295,7 @@ canvas {
 
 #banner p {
     font-family: 'gutteral';
+    text-shadow:2px 0px rgb(255, 33, 200);
     margin: 0px;
     color: purple;
     display: inline-block;
@@ -106,14 +316,14 @@ canvas {
     display: block;
     position: fixed;
     width: 300px;
-    bottom: 5%;
-    right: -100vw;
-    transition: right 0.5s;
+    bottom: -100%;
+    right: calc(50vw - 150px);
+    transition: bottom 0.5s;
 }
 
 .chat-window p {
     display: block;
-    padding: 5px;
+    padding: 8px;
     border-radius: 2px;
     min-width: 50%;
     max-width: 80%;
@@ -126,14 +336,17 @@ canvas {
 .chat-window p#user {
     font-size: 1.5em;
     float: right;
-    background-color: lightgray;
+    background-color: lightskyblue;
+    text-align: left;
+    border-radius: 10px 0px 10px 10px;
 }
 
 .chat-window p#bb {
     font-size: 1.5em;
     overflow: wrap;
     float: left;
-    background-color: pink;
+    background-color: lightpink;
+    border-radius: 0px 10px 10px 10px;
 }
 
 .input-section {
@@ -161,6 +374,27 @@ canvas {
 /* SMALL RULES */
 
 @media only screen and (max-width: 720px){
+
+    .big-window .window {
+        font-size: 1em;
+    }
+
+    #acknowledgments-body img {
+        width: 250px;
+    }
+
+    .nav {
+        left: 0%;
+        margin-left: -10px;
+        border-left: none;
+        border-radius: 0px 0px 20px 0px;
+        width: 120px;
+
+    }
+
+    .nav button {
+        width: 120px;
+    }
 }
 
 
@@ -177,20 +411,20 @@ canvas {
 
 @keyframes cherubChyron {
     0% {
-        transform: translate(0%, 0) rotate(10deg);
+        transform: translate(-10%, 0) rotate(10deg);
     }
     25% {
         transform: translate(25%, 50px) rotate(0deg);
     }
 
     50% {
-        transform: translate(50%, 0) rotate(0deg);
+        transform: translate(50%, -30px) rotate(0deg);
     }
     75% {
         transform: translate(75%, 50px) rotate(0deg);
     }
     100% {
-        transform: translate(100%, 0) rotate(-10deg);
+        transform: translate(110%, 0) rotate(-10deg);
         
     }
 }

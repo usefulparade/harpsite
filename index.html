@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>angel bb</title>
     <meta name="description" content="not yr angel bb harpist">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
         rel="stylesheet"
         href="https://unpkg.com/98.css"
@@ -35,41 +35,11 @@
 
 
 <body>
-    <!-- <h1>chatbot</h1> -->
-    <div class="banner-and-cherubs" id="banner">
-        <img src="./assets/gifs/special/chyron-cherub.gif">
-        <div class="window" id="banner" style="width: 75%">
-            <div class="title-bar">
-            <div class="title-bar-text">On Tour Now!</div>
-            <div class="title-bar-controls">
-                <!-- <button aria-label="Help"></button> -->
-            </div>
-            </div>
-            <div class="window-body">
-                <p>
-                    <span>👼 not yr angel bby harpist  // </span> 
-                    <span>✨ LIVE!! // </span>
-                    <span>🎤 In Concert! // </span>
-                    <span>📅 May 15, Toronto, 8:00PM // </span>
-                    <span>🎟️ click here to buy tickets </span>
-                </p>
-            </div>
-        </div>
-        <img src="./assets/gifs/special/chyron-cherub.gif">
-    </div>
-    <!-- <div class="banner">
-        <p>
-            <span>not yr angel bby harpist — </span> 
-            <span>LIVE!! — </span>
-            <span>In Concert! — </span>
-            <span>May 15, At this place, at this time — </span>
-            <span>Click here for tickets and more information — </span>
-        </p>
-    </div> -->
+    
     <div class="chat-window" id="chat-window">
         <div class="window" id="chat-output-window" style="width: 100%">
             <div class="title-bar">
-                <div class="title-bar-text">angel bby chat client ✨ONLINE✨</div>
+                <div class="title-bar-text">💬 CHAT: angel bby ✨ONLINE✨</div>
                 <div class="title-bar-controls">
                     <!-- <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
@@ -87,11 +57,123 @@
             
         </div>
         
+        
+    </div>
+
+    <div class ="big-window" id="tour-window">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">🎤🎤🎤 TOUR DATES 🎤🎤🎤</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="modalClose('#tour-window')"></button>
+                </div>
+            </div>
+                <div class="window-body" id="tour-body">
+                    <div class="status-bar">
+                        <p class="status-bar-field" id="header"><em>DATE</em></p>
+                        <p class="status-bar-field" id="header"><em>CITY</em></p>
+                        <p class="status-bar-field" id="header"><em>LINK</em></p>
+                        <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
+                    </div>
+                    <div class="status-bar">
+                        <p class="status-bar-field">May 15, 8:00</p>
+                        <p class="status-bar-field">TORONTO</p>
+                        <p class="status-bar-field" id="tickets"><button>🎟️ tickets 🎟️</button></p>
+                        <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
+                    </div>
+                    <div class="status-bar">
+                        <p class="status-bar-field">May 15, 8:00</p>
+                        <p class="status-bar-field">TORONTO</p>
+                        <p class="status-bar-field" id="tickets"><button>🎟️ tickets 🎟️</button></p>
+                        <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    <div class ="big-window" id="acknowledgments-window">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">🙏🙏🙏 ACKNOWLEDGMENTS 🙏🙏🙏</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="modalClose('#acknowledgments-window')"></button>
+                </div>
+            </div>
+                <div class="window-body" id="acknowledgments-body">
+                    <a target="_blank" href="https://www.otf.ca/"><img src="/assets/img/logos/CBF.png"></a>
+                    <a target="_blank" href="https://www.arts.on.ca/"><img src="/assets/img/logos/OAC.png"></a>
+                    <a target="_blank" href="https://canadacouncil.ca/"><img src="/assets/img/logos/CCA.png"></a>
+                    <p>Pat the Dog Theatre Creation</p>
+                    <p>Open Ears Festival of Music and Sound</p>
+                    <p>Inter Arts Matrix</p>
+                    <!-- "cemetery Angel - Miller" (https://skfb.ly/UUUN) by misterdevious is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/). -->
+                    <!-- <p>"Greek column" (https://skfb.ly/6wxpv) by Théo Lerbeil is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p> -->
+                </div>
+
+        </div>
+    </div>
+
+    <div class ="big-window" id="merch-window">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">🛍️🛍️🛍️ MERCH 🛍️🛍️🛍️</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="modalClose('#merch-window')"></button>
+                </div>
+            </div>
+                <div class="window-body" id="merch-body">
+                    <p>COMING SOON</p>
+                </div>
+
+        </div>
+    </div>
+    
+    <div class="nav">
+        <button onclick="modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window');">Tour</button>
+        <button onclick="modalOpen('#acknowledgments-window'); modalClose('#merch-window'); modalClose('#tour-window');">Acknowledgments</button>
+        <button onclick="modalOpen('#merch-window'); modalClose('#acknowledgments-window'); modalClose('#tour-window');">Merch</button>
+    </div>
+
+    <div class="utilities">
+        <div class="field-row" id="volume">
+            <div class="is-vertical">
+            <input id="range25" type="range" min="0" max="10" step="1" value="3" oninput="outputVolume(this.value*0.1)"/>
+            </div>
+            <label for="range25">🔊</label>
+        </div>
+
+        <div class="panic-button">
+            <button id="panic" onclick="panic()">PANIC!</button>
+        </div>
     </div>
 
     <div id="scene-container">
         <!-- THREE DEE STUFF lives here :) -->
       </div>
+
+      <div class="banner-and-cherubs" id="banner">
+        <img src="./assets/gifs/special/chyron-cherub.gif">
+        <div class="window" id="banner" style="width: 75%" onclick="modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window');">
+            <div class="title-bar">
+            <div class="title-bar-text">On Tour Now!</div>
+            <div class="title-bar-controls">
+            </div>
+            </div>
+            <div class="window-body">
+                <p>
+                    <span>👼 not yr angel bby harpist  // </span> 
+                    <span>✨ LIVE!! // </span>
+                    <span>🎤 In Concert! // </span>
+                    <span>📅 May 15, Toronto, 8:00PM // </span>
+                    <span>🎟️ click here for more info </span>
+                </p>
+            </div>
+        </div>
+        <img src="./assets/gifs/special/chyron-cherub.gif">
+    </div>
+
+      
 
    
 </body>

@@ -10,7 +10,7 @@ const setSize = (container, camera, renderer) => {
 
     // set the pixel ratio (for mobile devices)
     // renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setPixelRatio(window.devicePixelRatio/5);
+    renderer.setPixelRatio(window.devicePixelRatio/3);
   };
 
 class Resizer {

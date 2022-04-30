@@ -21,6 +21,7 @@ function createCube() {
   };
 
   return cube;
+  
 }
 
 export { createCube };
