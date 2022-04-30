@@ -23,9 +23,9 @@ body {
     /* background-image: linear-gradient(-45deg, rgba(255, 192, 203, 1) 25%, blue 50%, rgba(138, 43, 226, 1) 75%);  */
     height: 100vh;
     width: 100vw;
-    cursor: url('../assets/cursor/angel.png'), pointer;
+    cursor: url('./assets/cursor/angel.png'), default;
     background-color: rgb(223, 235, 243);
-    background-image: url('../assets/img/bg_clouds.jpg');
+    background-image: url('./assets/img/bg_clouds.jpg');
     image-rendering: pixelated;
     background-size: cover;
     background-position: bottom;
