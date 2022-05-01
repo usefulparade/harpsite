@@ -60,6 +60,16 @@ canvas {
     z-index: -1000;
 }
 
+a {
+    /* color: tomato; */
+    color: white;
+    
+}
+
+a:hover {
+    background-color: tomato;
+}
+
 .nav {
     display: block;
     position: absolute;
