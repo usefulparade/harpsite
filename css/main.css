@@ -212,12 +212,21 @@ canvas {
     transform: rotate(-2deg);
 }
 
+#tour-window .window,
+#acknowledgments-window .window  {
+    white-space:normal;
+}
+
 #acknowledgments-window {
+    width: 60vw;
+    max-width: 1000px;
     transform: rotate(2deg);
 }
 
+
+
 #tour-body p.status-bar-field {
-    width: 30%;
+    width: 25%;
     /* height: 100px; */
     padding-top: 25px;
     padding-bottom: 25px;
@@ -225,10 +234,11 @@ canvas {
     padding-right: 0px;
     text-align: center;
     vertical-align: middle;
+    overflow-wrap:break-word;
 }
 
 #tour-body p.status-bar-field#tickets {
-    width: 30%;
+    width: 25%;
     padding: 0px;
 }
 
@@ -250,11 +260,14 @@ canvas {
 }
 
 #acknowledgments-body {
-    margin-bottom: 100px;
-    margin-top: 30px;
-    width: 100%;
-
-
+   
+    width: 60vw;
+    max-width: 1000px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 40px;
+    margin: 0px;
+    box-sizing: border-box;
 }
 
 #acknowledgments-body img {
@@ -274,13 +287,80 @@ canvas {
 
 #acknowledgments-body p {
     text-align: center;
+    width: 100%;
+    overflow-wrap:break-word;
+}
+
+#merch-window {
+    height: 80vh;
+    width: 400px;
+    transform: rotate(-8deg);
+}
+
+#merch-body {
+    width: 100%;
+    overflow-y: scroll;
+    padding: 30px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
 }
 
 #merch-body p {
     text-align: center;
 }
 
+#merch-body img {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    /* border: 10px solid tomato; */
+    transform: rotate(-1deg);
+    animation: swimmy 5s ease-in-out infinite;
+    vertical-align: middle;
+}
+
+#merch-body button {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    transform: rotate(3deg);
+    animation: swimmy 8s ease-in-out infinite;
+    vertical-align: middle;
+}
+
+#socialize-window {
+    width: 80vw;
+    height: calc(80vw/11 + 40px);
+    transform: rotate(8deg);
+    padding-left: calc(100%/20);
+    padding-right: calc(100%/20);
+    margin-top: 100px;
+}
+
+.window-body#socialize-body {
+    width: 80vw;
+    height: 100%;
+}
+
+#socialize-body img {
+    display: inline-block;
+    position: relative;
+    width: calc(100%/11);
+    animation: swimmy 10s ease-in-out infinite;
+    border-radius: 10px;
+}
+
+#socialize-body img:hover {
+    background-color: tomato;
+    cursor: pointer;
+
+}
+
 .window#meme {
+    position: absolute;
     top: -100vh;
     transition: top 1s;
 }
@@ -291,6 +371,7 @@ canvas {
 
 .window#meme .title-bar{
     background-image: linear-gradient(90deg, purple 0%, pink 80%);
+    cursor: move;
 }
 
 #banner p {
@@ -371,12 +452,32 @@ canvas {
     padding: 20px;
 }
 
+.glissTrigger {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 100px);
+    /* background-color: white; */
+    cursor: alias;
+}
+
 /* SMALL RULES */
 
 @media only screen and (max-width: 720px){
 
     .big-window .window {
         font-size: 1em;
+    }
+
+    #acknowledgments-window {
+        width: 400px;
+        margin-left: -50px;
+    }
+
+    #acknowledgments-body {
+        width: 400px;
     }
 
     #acknowledgments-body img {
@@ -435,5 +536,27 @@ canvas {
     }
     100% {
         transform: scale(100%);
+    }
+}
+
+@keyframes swimmy {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        transform: translate(-10px, 10px);
+    }
+
+    75% {
+        transform: translate(10px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
     }
 }

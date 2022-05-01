@@ -15,9 +15,24 @@ let harpImages = [];
 let memeCluster;
 let clusterCounter;
 
+let audioTour, audioMerch, audioAcknowledgments, audioSocialize, audioPanic, audioClose, audioMainGliss, audioUserChat, audioAngelChat;
+
+let unpromptedTriggerNames = [
+    'angelimg',
+    'angelgeneric',
+    'dreamy',
+    'flirt',
+    'genplay',
+    'harpgeneric',
+    'heaven',
+    'popculture',
+    'harp',
+    'selfie'
+];
+
 let triggerNames = [
     //IMAGES
-    'angelimages',
+    'angelimg',
     'harp',
     'harpporn',
     'selfie',
@@ -106,7 +121,7 @@ let triggerLengths = [
     2,
     11,
     3,
-    5,
+    4,
     7,
     1,
     1,
@@ -133,7 +148,15 @@ p5.disableFriendlyErrors = true; // disables FES
 
 function preload(){
     bgLoop = loadSound('./assets/audio/bg_loop_v2.wav');
-
+    audioMainGliss = loadSound('./assets/audio/MAINPAGE/maingliss.mp3');
+    audioClose = loadSound('./assets/audio/MAINPAGE/close.mp3');
+    audioAcknowledgments = loadSound('./assets/audio/MAINPAGE/acknowledgments.mp3');
+    audioTour = loadSound('./assets/audio/MAINPAGE/tour.mp3');
+    audioSocialize = loadSound('./assets/audio/MAINPAGE/socialize.mp3');
+    audioAngelChat = loadSound('./assets/audio/MAINPAGE/chat-angel.mp3');
+    audioUserChat = loadSound('./assets/audio/MAINPAGE/chat-user.mp3');
+    audioPanic = loadSound('./assets/audio/MAINPAGE/panic_0.mp3');
+    audioMerch = loadSound('./assets/audio/MAINPAGE/merch.mp3');
 }
 
 function setup(){
@@ -197,12 +220,20 @@ function setup(){
         userinput.value('');
         outputDiv.scrollTop = outputDiv.scrollHeight;
 
+        audioUserChat.play();
+
         await sleep(2000);
 
         bot.reply(username, chat).then(function(reply){
             andTheReply(reply);
         });
         
+    }
+
+    let merchBody = document.getElementById('merch-body')
+
+    for (i=0;i<merchBody.children.length;i++){
+        randomizeAnimationTiming(merchBody.children[i]);
     }
 
     inactiveCounter = 0;
@@ -226,7 +257,7 @@ function draw(){
     if (memeTimer > 0){
         memeTimer-= deltaTime;
     } else {
-        let trigger = triggerNames[int(random(triggerNames.length))];
+        let trigger = unpromptedTriggerNames[int(random(unpromptedTriggerNames.length))];
         memeThrower97(convertTriggerToType(trigger), trigger);
         if (memeCluster){
             memeTimer = random(100, 500);
@@ -245,6 +276,7 @@ function draw(){
 
 function andTheReply(_reply){
     responseLog.push(_reply);
+    audioAngelChat.play();
     let trigger;
 
     if (_reply.includes('&&')){
@@ -330,6 +362,7 @@ async function memeThrower97(type, trigger){
     closeButton.html('');
 
     closeButton.mousePressed(function(){
+        audioClose.play();
         newWindow.style('top', '150vh');
         newWindow.addClass('dead');
         setTimeout(memeCleanup, 3000);
@@ -346,8 +379,16 @@ async function memeThrower97(type, trigger){
     windowBody.parent(newWindow);
 
     newWindow.style('transform', 'rotate(' + random(-12, 12) + 'deg)');
-    newWindow.style('width', '' + random(20, 40) + '%');
-    newWindow.position(random(0, windowWidth*.6), random(100, windowHeight*.5));
+
+    if (windowWidth > 720){
+        newWindow.style('width', '' + random(20, 40) + '%');
+    } else {
+        newWindow.style('width', '' + random(35, 60) + '%'); // big memez for small screenz
+    }
+
+    newWindow.position(random(0, windowWidth*.7), random(50, windowHeight*.6));
+
+    dragElement(newWindow.elt);
 
     memes.push(newWindow);
     
@@ -363,7 +404,7 @@ function convertTriggerToType(trigger){
     let t = trigger;
     if (t == "harp" | 
         t == "harpporn" |
-        t == "angelimages" |
+        t == "angelimg" |
         t == "selfie" |
         t == "stainedglass")
     {
@@ -408,6 +449,7 @@ function modalOpen(modalName){
 }
 
 function modalClose(modalName){
+    audioClose.play();
     let modal = select(modalName);
     modal.style('top', '-100vh');
 }
@@ -428,5 +470,51 @@ function fileExists(url){
     http.send();
 
     return http.status != 404;
+}
+
+
+function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    // drag from the title bar!
+    elmnt.children[0].onmousedown = dragMouseDown;
+    elmnt.children[0].children[1].children[0] = closeDragElement;
+  
+    function dragMouseDown(e) {
+        elmnt.style.transition = "top 0s";
+        document.body.append(elmnt);
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+  
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      elmnt.style.transition = "top 1s";
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+
+function randomizeAnimationTiming(elmnt){
+    elmnt.style.animationDelay = "" + random(0, 2) + "s";
 }
 

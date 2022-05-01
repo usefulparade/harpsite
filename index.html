@@ -27,6 +27,8 @@
     <script src="js/chatbot.js"></script>
     <!-- <script src="js/avatar.js"></script> -->
     <script type="module" src="./js/three-avatar.js"></script>
+
+    
     
 
     
@@ -35,6 +37,9 @@
 
 
 <body>
+    <div class="glissTrigger" onclick="audioMainGliss.play();">
+
+    </div>
     
     <div class="chat-window" id="chat-window">
         <div class="window" id="chat-output-window" style="width: 100%">
@@ -71,21 +76,16 @@
                 <div class="window-body" id="tour-body">
                     <div class="status-bar">
                         <p class="status-bar-field" id="header"><em>DATE</em></p>
+                        <p class="status-bar-field" id="header"><em>VENUE</em></p>
                         <p class="status-bar-field" id="header"><em>CITY</em></p>
                         <p class="status-bar-field" id="header"><em>LINK</em></p>
                         <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
                     </div>
                     <div class="status-bar">
-                        <p class="status-bar-field">May 15, 8:00</p>
-                        <p class="status-bar-field">TORONTO</p>
-                        <p class="status-bar-field" id="tickets"><button>🎟️ tickets 🎟️</button></p>
-                        <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
-                    </div>
-                    <div class="status-bar">
-                        <p class="status-bar-field">May 15, 8:00</p>
-                        <p class="status-bar-field">TORONTO</p>
-                        <p class="status-bar-field" id="tickets"><button>🎟️ tickets 🎟️</button></p>
-                        <!-- <p class="status-bar-field">CPU Usage: 14%</p> -->
+                        <p class="status-bar-field">June 4 2022, 8pm</p>
+                        <p class="status-bar-field">Catalyst137</p>
+                        <p class="status-bar-field">Kitchener</p>
+                        <p class="status-bar-field" id="tickets"><button onclick="location.href='https://www.eventbrite.ca/e/not-yr-angel-bby-harpist-tickets-326694320507';">🎟️ tickets</button></p>
                     </div>
                 </div>
 
@@ -101,12 +101,44 @@
                 </div>
             </div>
                 <div class="window-body" id="acknowledgments-body">
+                    <p>This website is the digital homeland of angel bby, a trickster harpist-bae character developed by contemporary harpist and composer <a target="_blank" href="https://www.gracescheele.com/">Grace Scheele</a> in collaboration with LJ Bullen for Grace's interdisciplinary multimedia solo show not yr angel bby harpist.</p>
+
+                    <p>not yr angel bby harpist will premiere on June 4th, 2022 at 8pm in Kitchener, ON during <a target="_blank" href="https://openears.ca/">Open Ears Festival of Music and Sound</a>. Get your tickets <a target="_blank" href="https://www.eventbrite.ca/e/not-yr-angel-bby-harpist-tickets-326694320507">here</a>.</p>
+
+                    <p>not yr angel bby harpist was developed by <a target="_blank" href="https://www.gracescheele.com/">Grace Scheele</a> during <a target="_blank" href="https://www.interartsmatrix.ca/">Inter Arts Matrix</a>'s 2021-2022 COVE/COVEX program with mentorship by Richard Burrows, Artistic Director of <a target="_blank" href="https://www.gracescheele.com/">Open Ears Festival of Music and Sound</a>.</p>
+
+                    <p>
+                        Thank you to our wonderful creative team:<br>
+                        Cameron Slipp - Production Manager, Inter Arts Matrix<br>
+                        Daniel MacPherson - Production Manager, Open Ears<br>
+                        Gilbert Lesperance - Set Design and Construction<br>
+                        <a target="_blank" href="https://www.instagram.com/dykerani/?hl=en">Hana</a> - Avatar Design<br>
+                        <a target="_blank" href="http://lvano.art">Lisa Van Oorschot</a> - Stage Management and Lighting Design<br>
+                        LJ Bullen - Script Writing and Character Development<br>
+                        <a target="_blank" href="http://pinginteractive.studio">Meghan Cheng</a> - Video Design<br>
+                        <a target="_blank" href="https://melissacrabtreeactor.com/">Melissa Crabtree</a> - Costumer<br>
+                        Richard Burrows - Mentorship<br>
+                        Sam Rowlandson-O'Hara - Media Archive Management<br>
+                        <a target="_blank" href="http://qikcreative.com">Steve Cross</a> - Avatar Animation and Integration<br>
+
+                    </p>
+
+                    <p>We acknowledge the support of the <a target="_blank" href="https://canadacouncil.ca/">Canada Council for the Arts</a>, <a target="_blank" href="https://www.arts.on.ca/">Ontario Arts Council</a>, <a target="_blank" href="https://www.otf.ca/">the Ontario Trillium Foundation</a>, and <a target="_blank" href="https://patthedog.org/">Pat the Dog Theatre Creation </a>for their support of this production.</p>
+
+                    <p>We would also like to thank <a target="_blank" href="https://www.interartsmatrix.ca/">Inter Arts Matrix</a> and <a target="_blank" href="https://openears.ca/">Open Ears Festival of Music and Sound</a> for the invaluable opportunity to develop and present this work.</p>
+
+                    
                     <a target="_blank" href="https://www.otf.ca/"><img src="./assets/img/logos/CBF.png"></a>
                     <a target="_blank" href="https://www.arts.on.ca/"><img src="./assets/img/logos/OAC.png"></a>
                     <a target="_blank" href="https://canadacouncil.ca/"><img src="./assets/img/logos/CCA.png"></a>
-                    <p>Pat the Dog Theatre Creation</p>
-                    <p>Open Ears Festival of Music and Sound</p>
-                    <p>Inter Arts Matrix</p>
+                    <p><a target="_blank" href="https://docs.google.com/document/d/10ZXaMRZ8w0hBpf-9_jvFgJopUDIokM22q136hkI5Sa8/edit?usp=sharing">bibliography</a></p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>a <a target="_blank" href="https://www.usefulparade.com">Useful Parade</a> site</p>
+                    <a target="_blank" href="https://www.usefulparade.com"><img style="width: 100px;" src="./assets/img/logos/up-logo.png"></a>
+                    
+                   
                     <!-- "cemetery Angel - Miller" (https://skfb.ly/UUUN) by misterdevious is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/). -->
                     <!-- <p>"Greek column" (https://skfb.ly/6wxpv) by Théo Lerbeil is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p> -->
                 </div>
@@ -123,16 +155,49 @@
                 </div>
             </div>
                 <div class="window-body" id="merch-body">
-                    <p>COMING SOON</p>
+                    <!-- <p>COMING SOON</p> -->
+                    <img src="./assets/merch/TSHIRT.png">
+                    <button>buy a shirt!</button>
+                    <br>
+                    <img src="./assets/merch/MABELHARP.PNG">
+                    <button>buy a sticker!</button>
+                    <br>
+                    <img src="./assets/merch/HARPSTICKER.PNG">
+                    <button>buy a sticker!</button>
                 </div>
 
         </div>
     </div>
+
+    <div class ="big-window" id="socialize-window">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">👁️‍🗨️👁️‍🗨️👁️‍🗨️ SOCIALIZE 👁️‍🗨️👁️‍🗨️👁️‍🗨️</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="modalClose('#socialize-window')"></button>
+                </div>
+            </div>
+            <div class="window-body" id="socialize-body">
+                <a target="_blank" href="https://www.youtube.com/channel/UCB1NloJfQq1_-yRYQObhcDQ"><img style="animation-delay: 0s;" src="./assets/social-icons/Youtube3.png"></a>
+                <a target="_blank" href="https://twitter.com/graceharpsit"><img style="animation-delay: 1s;" src="./assets/social-icons/TWITTER.png"></a>
+                <a target="_blank" href="https://www.twitch.tv/graceharpsit"><img style="animation-delay: 2s;" src="./assets/social-icons/TWITCH.png"></a>
+                <a target="_blank" href="https://www.tiktok.com/@graceharpsit?is_from_webapp=1&sender_device=pc"><img style="animation-delay: 3s;" src="./assets/social-icons/TIKTOK2.png"></a>
+                <a target="_blank" href="https://open.spotify.com/artist/6jZwr1Cqz4cw0wRHjcc6AL?si=Tof8y3FBSTeG_8ZfayNluA&nd=1"><img style="animation-delay: 4s;" src="./assets/social-icons/SPOTIFY.png"></a>
+                <a target="_blank" href="https://www.reddit.com/r/harp/"><img style="animation-delay: 5s;" src="./assets/social-icons/REDDIT.png"></a>
+                <a target="_blank" href="https://www.instagram.com/graceharpsit__/ "><img style="animation-delay: 6s;" src="./assets/social-icons/INSTAGRAM.png"></a>
+                <a target="_blank" href="https://www.facebook.com/graceharpsit/"><img style="animation-delay: 7s;" src="./assets/social-icons/FACEBOOK.png"></a>
+                <a target="_blank" href="https://discord.gg/y65KPRxyv7"><img style="animation-delay: 8s;" src="./assets/social-icons/DISCORD1.png"></a>
+                <a target="_blank" href="https://gracescheele.bandcamp.com/"><img style="animation-delay: 9s;" src="./assets/social-icons/BANDCAMP.png"></a>
+            </div>
+               
+        </div>
+    </div>
     
     <div class="nav">
-        <button onclick="modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window');">Tour</button>
-        <button onclick="modalOpen('#acknowledgments-window'); modalClose('#merch-window'); modalClose('#tour-window');">Acknowledgments</button>
-        <button onclick="modalOpen('#merch-window'); modalClose('#acknowledgments-window'); modalClose('#tour-window');">Merch</button>
+        <button onclick="audioTour.play(); modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window'); modalClose('#socialize-window');">Tour</button>
+        <button onclick="audioAcknowledgments.play(); modalOpen('#acknowledgments-window'); modalClose('#merch-window'); modalClose('#tour-window'); modalClose('#socialize-window');">Acknowledgments</button>
+        <button onclick="audioMerch.play(); modalOpen('#merch-window'); modalClose('#acknowledgments-window'); modalClose('#tour-window'); modalClose('#socialize-window');">Merch</button>
+        <button onclick="audioSocialize.play(); modalOpen('#socialize-window'); modalClose('#acknowledgments-window'); modalClose('#tour-window'); modalClose('#merch-window');">Socialize</button>
     </div>
 
     <div class="utilities">
@@ -144,7 +209,7 @@
         </div>
 
         <div class="panic-button">
-            <button id="panic" onclick="panic()">PANIC!</button>
+            <button id="panic" onclick="audioPanic.play(); panic()">PANIC!</button>
         </div>
     </div>
 
@@ -153,10 +218,10 @@
       </div>
 
       <div class="banner-and-cherubs" id="banner">
-        <img src="./assets/gifs/special/chyron-cherub.gif">
-        <div class="window" id="banner" style="width: 75%" onclick="modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window');">
+        <img src="./assets/gifs/special/CHERUB.gif">
+        <div class="window" id="banner" style="width: 75%" onclick="audioTour.play(); modalOpen('#tour-window'); modalClose('#acknowledgments-window'); modalClose('#merch-window');">
             <div class="title-bar">
-            <div class="title-bar-text">On Tour Now!</div>
+            <div class="title-bar-text">✈️✈️✈️ On Tour Now! ✈️✈️✈️</div>
             <div class="title-bar-controls">
             </div>
             </div>
@@ -170,8 +235,10 @@
                 </p>
             </div>
         </div>
-        <img src="./assets/gifs/special/chyron-cherub.gif">
+        <img src="./assets/gifs/special/CHERUB.gif">
     </div>
+
+    
 
       
 
