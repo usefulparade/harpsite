@@ -449,7 +449,7 @@ function modalOpen(modalName){
 }
 
 function modalClose(modalName){
-    audioClose.play();
+    // audioClose.play();
     let modal = select(modalName);
     modal.style('top', '-100vh');
 }
