@@ -37,6 +37,7 @@
 
 
 <body>
+    
     <div class="glissTrigger" onclick="audioMainGliss.play();">
 
     </div>
@@ -85,7 +86,7 @@
                         <p class="status-bar-field">June 4 2022, 8pm</p>
                         <p class="status-bar-field">Catalyst137</p>
                         <p class="status-bar-field">Kitchener</p>
-                        <p class="status-bar-field" id="tickets"><button onclick="location.href='https://www.eventbrite.ca/e/not-yr-angel-bby-harpist-tickets-331574146197?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=escb';">🎟️ tickets</button></p>
+                        <p class="status-bar-field" id="tickets"><a class="link-button" target="_blank" href="https://www.eventbrite.ca/e/not-yr-angel-bby-harpist-tickets-331574146197?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=escb"><span>🎟️ tickets</span></a></p>
                     </div>
                 </div>
 
@@ -101,9 +102,9 @@
                 </div>
             </div>
                 <div class="window-body" id="acknowledgments-body">
-                    <p>This website is the digital homeland of angel bby, a trickster harpist-bae character developed by contemporary harpist and composer <a target="_blank" href="https://www.gracescheele.com/">Grace Scheele</a> in collaboration with LJ Bullen for Grace's interdisciplinary multimedia solo show not yr angel bby harpist.</p>
-
                     <p>not yr angel bby harpist will premiere on June 4th, 2022 at 8pm in Kitchener, ON during <a target="_blank" href="https://openears.ca/">Open Ears Festival of Music and Sound</a>. Get your tickets <a target="_blank" href="https://www.eventbrite.ca/e/not-yr-angel-bby-harpist-tickets-326694320507">here</a>.</p>
+
+                    <p>This website is the digital homeland of angel bby, a trickster harpist-bae character developed by contemporary harpist and composer <a target="_blank" href="https://www.gracescheele.com/">Grace Scheele</a> in collaboration with LJ Bullen for Grace's interdisciplinary multimedia solo show not yr angel bby harpist.</p>
 
                     <p>not yr angel bby harpist was developed by <a target="_blank" href="https://www.gracescheele.com/">Grace Scheele</a> during <a target="_blank" href="https://www.interartsmatrix.ca/">Inter Arts Matrix</a>'s 2021-2022 COVE/COVEX program with mentorship by Richard Burrows, Artistic Director of <a target="_blank" href="https://www.gracescheele.com/">Open Ears Festival of Music and Sound</a>.</p>
 
@@ -159,15 +160,14 @@
                 </div>
             </div>
                 <div class="window-body" id="merch-body">
-                    <!-- <p>COMING SOON</p> -->
-                    <img src="./assets/merch/TSHIRT.png">
-                    <button>buy a shirt!</button>
-                    <br>
                     <img src="./assets/merch/MABELHARP.PNG">
-                    <button>buy a sticker!</button>
+                    <a class="link-button" target="_blank" href="https://www.anactorplans.com/collections/sticker-bundle-options/products/this-is-what-a-mabel-looks-like-mabel-die-cut-sticker"><span>buy a sticker!</span></a>
                     <br>
                     <img src="./assets/merch/HARPSTICKER.PNG">
-                    <button>buy a sticker!</button>
+                    <a class="link-button" target="_blank" href="https://www.anactorplans.com/products/harp-die-cut-sticker"><span>buy a sticker!</span></a>
+                    <br>
+                    <img src="./assets/merch/TSHIRT.png">
+                    <a class="link-button"><span>COMING SOON!!</span></a>
                 </div>
 
         </div>
@@ -215,6 +215,10 @@
         <div class="panic-button">
             <button id="panic" onclick="audioPanic.play(); panic()">PANIC!</button>
         </div>
+    </div>
+
+    <div id="p5_loading" class="loading">
+        <img src="./assets/gifs/special/loading.gif">
     </div>
 
     <div id="scene-container">

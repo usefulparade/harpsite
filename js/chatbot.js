@@ -15,6 +15,11 @@ let harpImages = [];
 let memeCluster;
 let clusterCounter;
 
+let yawnAudio = []
+let explosionAudio = []
+let glissAudio = []
+let heavenAudio = [];
+
 let audioTour, audioMerch, audioAcknowledgments, audioSocialize, audioPanic, audioClose, audioMainGliss, audioUserChat, audioAngelChat;
 
 let unpromptedTriggerNames = [
@@ -27,18 +32,22 @@ let unpromptedTriggerNames = [
     'heaven',
     'popculture',
     'harp',
-    'selfie'
+    'selfie',
+    'tour'
 ];
 
 let triggerNames = [
     //IMAGES
     'angelimg',
+    'angelbbyimg',
     'harp',
     'harpporn',
+    'hello',
     'selfie',
     'stainedglass',
+    'tour',
     //GIFS
-    'angel',
+    'angel', 
     'angelbby',
     'angeldevil',
     'angelflirt',
@@ -83,17 +92,18 @@ let triggerNames = [
     'vacay',
     'wrong',
     'zuck',
-
-
 ];
 
 let triggerLengths = [
     //IMAGES
     11,
+    3,
     26,
     7,
+    1,
     13,
     7,
+    3,
     //GIFS
     1,
     1,
@@ -120,7 +130,7 @@ let triggerLengths = [
     5,
     2,
     11,
-    3,
+    2,
     4,
     7,
     1,
@@ -142,6 +152,15 @@ let triggerLengths = [
     5,
 
 ];
+
+let videoURLs = [
+    "https://www.youtube.com/embed/dcQqjKpPgQw",
+    "https://www.youtube.com/embed/Nmd2sGFbdDg",
+    "https://www.youtube.com/embed/Nz15gbUa-k4",
+    "https://www.youtube.com/embed/vVTPbLhlbfI",
+    "https://www.youtube.com/embed/3VjgLer8uGg"
+];
+
 let bgLoop;
 
 p5.disableFriendlyErrors = true; // disables FES
@@ -157,6 +176,21 @@ function preload(){
     audioUserChat = loadSound('./assets/audio/MAINPAGE/chat-user.mp3');
     audioPanic = loadSound('./assets/audio/MAINPAGE/panic_0.mp3');
     audioMerch = loadSound('./assets/audio/MAINPAGE/merch.mp3');
+
+    for (i=0;i<9;i++){
+        explosionAudio[i] = loadSound('./assets/audio/EXPLODE/EXPLODE_' + i + '.mp3');
+    }
+
+    for (j=0;j<11;j++){
+        glissAudio[j] = loadSound('./assets/audio/GLISS/GLISS_' + j + '.mp3');
+    }
+
+    for (k=0;k<2;k++){
+        heavenAudio[k] = loadSound('./assets/audio/HEAVEN/HEAVEN_' + k + '.mp3');
+        yawnAudio[k] = loadSound('./assets/audio/HEAVEN/HEAVEN_' + k + '.mp3');
+    }
+
+
 }
 
 function setup(){
@@ -254,7 +288,11 @@ function draw(){
         }
     }
 
-    if (memeTimer > 0){
+    //meme repeater!!
+
+    if (memeTimer >= 600){
+        
+    } else if (memeTimer > 0 && memeTimer < 600){ // if you're in a cluster, keep hitting zero
         memeTimer-= deltaTime;
     } else {
         let trigger = unpromptedTriggerNames[int(random(unpromptedTriggerNames.length))];
@@ -267,9 +305,9 @@ function draw(){
             }
         } else {
             memeTimer = random(6000, 30000);
-            if (random() < 0.6){
-                memeCluster = true;
-            }
+            // if (random() < 0.6){
+            //     memeCluster = true;
+            // }
         }
     }
 }
@@ -278,12 +316,18 @@ function andTheReply(_reply){
     responseLog.push(_reply);
     audioAngelChat.play();
     let trigger;
+    let multiple = false;
 
     if (_reply.includes('&&')){
         trigger = _reply.substring(
             _reply.indexOf('&')+2,
             _reply.lastIndexOf('&')-1
         );
+
+        if (trigger.includes('&&')){
+           trigger = trigger.split('&&');
+           multiple = true;
+        }
         console.log(trigger);
             
         _reply = _reply.slice(
@@ -299,12 +343,19 @@ function andTheReply(_reply){
     outputDiv.scrollTop = outputDiv.scrollHeight;
 
     if (trigger != null){
-        memeThrower97(convertTriggerToType(trigger), trigger);
+        if (!multiple){
+            memeThrower97(convertTriggerToType(trigger), trigger);
+        } else {
+            for (i=0;i<trigger.length;i++){
+                memeThrower97(convertTriggerToType(trigger[i]), trigger[i]);
+            }
+        }
+        
     }
 }
 
 function inactiveChat(){
-    if (inactiveCounter < 3){
+    if (inactiveCounter < 10){
         let code;
         if (chatLog.length == 0){
             code = "absent user";
@@ -318,13 +369,21 @@ function inactiveChat(){
 
         inactiveCounter++;
 
+        memeTimer = 0;
+        memeCluster = true;
+
         timeSinceLastChat = 0;
     }
 }
 
 async function memeThrower97(type, trigger){
     let memeChoice;
-    let memeLength = triggerLengths[triggerNames.indexOf(trigger)];
+    let memeLength 
+    if (type == 'video'){
+        memeLength = videoURLs.length;
+    } else {
+        memeLength = triggerLengths[triggerNames.indexOf(trigger)];
+    }
 
     let newWindow = createDiv().addClass('window');
     newWindow.id('meme');
@@ -348,6 +407,9 @@ async function memeThrower97(type, trigger){
     else if (type == 'gif'){
         titleText = createDiv('' + trigger.toUpperCase() + '_' + memeChoice + ".GIF");
         newMeme = createImg('./assets/gifs/' + trigger.toUpperCase() + '/' + trigger.toUpperCase() + '_' + memeChoice + '.gif');
+    } else if (type == 'video'){
+        titleText = createDiv('' + trigger.toUpperCase() + '_' + memeChoice + ".MOV");
+        newMeme = createDiv('<iframe width="560" height="315" src="' + videoURLs[memeChoice] + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
     }
 
     
@@ -389,6 +451,7 @@ async function memeThrower97(type, trigger){
     newWindow.position(random(0, windowWidth*.7), random(50, windowHeight*.6));
 
     dragElement(newWindow.elt);
+    // dragElementp5(newWindow);
 
     memes.push(newWindow);
     
@@ -402,15 +465,23 @@ function imgLoadSuccess(){
 function convertTriggerToType(trigger){
     let type;
     let t = trigger;
-    if (t == "harp" | 
-        t == "harpporn" |
-        t == "angelimg" |
-        t == "selfie" |
-        t == "stainedglass")
+    if (t == "harp" || 
+        t == "harpporn" ||
+        t == "angelimg" ||
+        t == "selfie" ||
+        t == "stainedglass" ||
+        t == "angelbby" ||
+        t == "hello" ||
+        t == "tour")
     {
         type = "img";
+    } 
+    else if (t == "debussy")
+    {
+        type = "video";
     }
-    else {
+    else 
+    {
         type = "gif";
     }
 
@@ -494,6 +565,7 @@ function dragElement(elmnt) {
     }
   
     function elementDrag(e) {
+        // console.log(e.clientX);
       e = e || window.event;
       e.preventDefault();
       // calculate the new cursor position:
@@ -501,9 +573,13 @@ function dragElement(elmnt) {
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
+
+    //   console.log("element offest top: " + elmnt.offsetTop + ", mouseY offset from last frame:" + pos2 + ", difference: " + (elmnt.offsetTop - pos2));
+       
       // set the element's new position:
       elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    
     }
   
     function closeDragElement() {
@@ -517,4 +593,51 @@ function dragElement(elmnt) {
 function randomizeAnimationTiming(elmnt){
     elmnt.style.animationDelay = "" + random(0, 2) + "s";
 }
+
+function dragElementp5(memeWindow) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    // drag from the title bar!
+    memeWindow.elt.children[0].onmousedown = dragMouseDown;
+    memeWindow.elt.children[0].children[1].children[0] = closeDragElement;
+  
+    function dragMouseDown(e) {
+        memeWindow.elt.style.transition = "top 0s";
+        document.body.append(memeWindow.elt);
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = mouseX;
+      pos4 = mouseY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+  
+    function elementDrag(e) {
+        // console.log(e.clientX);
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - mouseX;
+      pos2 = pos4 - mouseY;
+      pos3 = mouseX;
+      pos4 = mouseY;
+
+    //   console.log("element offest top: " + elmnt.offsetTop + ", mouseY offset from last frame:" + pos2 + ", difference: " + (elmnt.offsetTop - pos2));
+       
+      // set the element's new position:
+      let newX = (memeWindow.position.x - pos1);
+      let newY = (memeWindow.position.y - pos2);
+      memeWindow.position(newX, newY);
+    
+    }
+  
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      memeWindow.elt.style.transition = "top 1s";
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
 
