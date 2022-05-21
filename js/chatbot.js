@@ -47,34 +47,34 @@ let triggerNames = [
     'stainedglass',
     'tour',
     //GIFS
-    'angel', 
-    'angelbby',
+    'angel', // HAS AUDIO, HEAVEN       // PLUS STAINEDGLASS, PLUS ANGELIMG
+    'angelbby',                         // PLUS ANGELBBYIMG
     'angeldevil',
     'angelflirt',
     'angelgeneric',
     'angelsad',
     'angelsassy',
     'angelsexy',
-    'beauty',
+    'beauty',                           // PLUS SELFIE
     'bitcoin',
-    'bored',
+    'bored', // HAS AUDIO, YAWN
     'catchall',
     'christmas',
     'cryemote',
     'cute',
     'devil',
     'dreamy',
-    'explode',
+    'explode', // HAS AUDIO, EXPLODE
     'flirt',
     'flirthistory',
     'flirtlove',
     'genplay',
-    'gliss',
-    'good',
+    'gliss', // HAS AUDIO, GLISS
+    'good', 
     'harpangel',
-    'harpgeneric',
-    'harpqueen',
-    'heaven',
+    'harpgeneric',                      // PLUS HARP
+    'harpqueen',                        // PLUS HARPQUEENIMG
+    'heaven', // HAS AUDIO, HEAVEN
     'hello',
     'irish',
     'laughter',
@@ -83,7 +83,7 @@ let triggerNames = [
     'morning',
     'night',
     'noresponse',
-    'popculture',
+    'popculture', // HAS AUDIO, GLISS
     'popmean',
     'random',
     'sarcasm',
@@ -92,6 +92,7 @@ let triggerNames = [
     'vacay',
     'wrong',
     'zuck',
+    // 'yawn' // THIS TRIGGER ONLY HAS AUDIO, YAWN
 ];
 
 let triggerLengths = [
@@ -187,7 +188,7 @@ function preload(){
 
     for (k=0;k<2;k++){
         heavenAudio[k] = loadSound('./assets/audio/HEAVEN/HEAVEN_' + k + '.mp3');
-        yawnAudio[k] = loadSound('./assets/audio/HEAVEN/HEAVEN_' + k + '.mp3');
+        yawnAudio[k] = loadSound('./assets/audio/YAWN/YAWN_' + k + '.mp3');
     }
 
 
@@ -378,7 +379,11 @@ function inactiveChat(){
 
 async function memeThrower97(type, trigger){
     let memeChoice;
-    let memeLength 
+    let memeLength;
+
+    if (type == 'audioOnly'){
+        return;
+    }
     if (type == 'video'){
         memeLength = videoURLs.length;
     } else {
@@ -450,7 +455,7 @@ async function memeThrower97(type, trigger){
 
     newWindow.position(random(0, windowWidth*.7), random(50, windowHeight*.6));
 
-    dragElement(newWindow.elt);
+    dragElement(newWindow.elt); 
     // dragElementp5(newWindow);
 
     memes.push(newWindow);
@@ -479,14 +484,56 @@ function convertTriggerToType(trigger){
     else if (t == "debussy")
     {
         type = "video";
+    } 
+    else if (t == 'yawn')
+    {
+        type = 'audioOnly';
     }
     else 
     {
-        type = "gif";
+        type = 'gif';
+    }
+
+    //MULTIPLE TRIGGERS
+    if (t == "angel"){
+        memeThrower97(convertTriggerToType('stainedglass'), 'stainedglass');
+        memeThrower97(convertTriggerToType('angelimg'), 'angelimg');
+    } else if (t == "angelbby"){
+        memeThrower97(convertTriggerToType('angelbbyimg'), 'angelbbyimg');
+    } else if (t == "beauty"){
+        memeThrower97(convertTriggerToType('selfie'), 'selfie');
+    } else if (t == "harpgeneric"){
+        memeThrower97(convertTriggerToType('harp'), 'harp');
+    } else if (t == "harpqueen"){
+        memeThrower97(convertTriggerToType('harpqueenimg'), 'harpqueenimg');
+    }
+    
+    //AUDIO TRIGGERS
+    if (t == 'angel' ||
+        t == 'bored' ||
+        t == 'explode' ||
+        t == 'gliss' ||
+        t == 'heaven' ||
+        t == 'popculture' ||
+        t == 'yawn' )
+    {
+        audioCue(t);
     }
 
     return type;
 
+}
+
+function audioCue(t){
+    if (t == 'angel' || t == 'heaven'){
+        heavenAudio[int(random(heavenAudio.length))].play();
+    } else if (t == 'bored' || t == 'yawn'){
+        yawnAudio[int(random(yawnAudio.length))].play();
+    } else if (t == 'explode'){
+        explosionAudio[int(random(explosionAudio.length))].play();
+    } else if (t == 'gliss' || t == 'popculture'){
+        glissAudio[int(random(glissAudio.length))].play();
+    }
 }
 
 function memeCleanup(){
