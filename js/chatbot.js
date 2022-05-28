@@ -39,7 +39,6 @@ let unpromptedTriggerNames = [
 let triggerNames = [
     //IMAGES
     'angelimg',
-    'angelbbyimg',
     'harp',
     'harpporn',
     'hello',
@@ -48,7 +47,7 @@ let triggerNames = [
     'tour',
     //GIFS
     'angel', // HAS AUDIO, HEAVEN       // PLUS STAINEDGLASS, PLUS ANGELIMG
-    'angelbby',                         // PLUS ANGELBBYIMG
+    'angelbby',                         
     'angeldevil',
     'angelflirt',
     'angelgeneric',
@@ -98,7 +97,6 @@ let triggerNames = [
 let triggerLengths = [
     //IMAGES
     11,
-    3,
     26,
     7,
     1,
@@ -107,7 +105,7 @@ let triggerLengths = [
     3,
     //GIFS
     1,
-    1,
+    3,
     3,
     12,
     6,
@@ -498,8 +496,6 @@ function convertTriggerToType(trigger){
     if (t == "angel"){
         memeThrower97(convertTriggerToType('stainedglass'), 'stainedglass');
         memeThrower97(convertTriggerToType('angelimg'), 'angelimg');
-    } else if (t == "angelbby"){
-        memeThrower97(convertTriggerToType('angelbbyimg'), 'angelbbyimg');
     } else if (t == "beauty"){
         memeThrower97(convertTriggerToType('selfie'), 'selfie');
     } else if (t == "harpgeneric"){
